@@ -1,38 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: raphael <raphael@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/25 10:49:43 by raphael           #+#    #+#             */
-/*   Updated: 2024/06/25 11:32:16 by raphael          ###   ########.fr       */
+/*   Created: 2024/06/25 11:54:11 by raphael           #+#    #+#             */
+/*   Updated: 2024/06/25 11:57:34 by raphael          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include <unistd.h>
 
-int	ft_sqrt(int nb)
+void ft_putchar(char c)
 {
-	int	result;
-	int	i;
-
-	i = 1;
-	while (i * i <= nb && i <= 46340)
-	{
-		if (i * i == nb)
-		{
-			result = i;
-			return (result);
-		}
-		i++;
-	}
-	return (0);
+	write(1, &c, 1);
 }
-/*
+
 int main(int argc, char **argv)
 {
-	int a = atoi(argv[1]);
-	printf("racine carre de %d = %d", a, ft_sqrt(a));
-}*/
+	int	i;
+	int	j;
+
+	i = 1;
+	j = 0;
+	if (argc == 1)
+		return (1);
+	while (argc != 1)
+	{
+		while(argv[i][j])
+		{
+			ft_putchar(argv[i][j]);
+			j++;
+		}
+		j = 0;
+		i++;
+		ft_putchar('\n');
+		argc--;
+	}
+}

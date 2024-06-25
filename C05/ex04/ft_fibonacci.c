@@ -6,14 +6,14 @@
 /*   By: raphael <raphael@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 00:21:40 by raphael           #+#    #+#             */
-/*   Updated: 2024/06/25 00:33:43 by raphael          ###   ########.fr       */
+/*   Updated: 2024/06/25 11:32:40 by raphael          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-int ft_fibonacci(int index)
+int	ft_fibonacci(int index)
 {
 	if (index < 0)
 		return (-1);
@@ -21,9 +21,9 @@ int ft_fibonacci(int index)
 		return (0);
 	if (index == 1 || index == 2)
 		return (1);
-		return(ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
+	return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
 }
-
+/*
 int main(int argc, char **argv)
 {
 	if(argc == 2)
@@ -92,4 +92,4 @@ int main(int argc, char **argv)
 	printf("index = %d\n result = %d\n\n", f, ft_fibonacci(f));
 	return 0;
 	}
-}
+}*/

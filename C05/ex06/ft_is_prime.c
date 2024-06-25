@@ -1,38 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: raphael <raphael@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/25 10:49:43 by raphael           #+#    #+#             */
-/*   Updated: 2024/06/25 11:32:16 by raphael          ###   ########.fr       */
+/*   Created: 2024/06/25 11:13:51 by raphael           #+#    #+#             */
+/*   Updated: 2024/06/25 11:33:34 by raphael          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-int	ft_sqrt(int nb)
+int	ft_is_prime(int nb)
 {
-	int	result;
 	int	i;
+	int	nb_div;
 
-	i = 1;
-	while (i * i <= nb && i <= 46340)
+	i = 2;
+	if (nb < 2)
+		return (0);
+	if (nb == 2)
+		return (1);
+	while (i < nb)
 	{
-		if (i * i == nb)
-		{
-			result = i;
-			return (result);
-		}
+		if ((nb % i) == 0)
+			return (0);
 		i++;
 	}
-	return (0);
+	return (1);
 }
 /*
 int main(int argc, char **argv)
 {
 	int a = atoi(argv[1]);
-	printf("racine carre de %d = %d", a, ft_sqrt(a));
+	printf("%d est un nombre 1er (1oui 0non): %d\n", a, ft_is_prime(a));
 }*/
